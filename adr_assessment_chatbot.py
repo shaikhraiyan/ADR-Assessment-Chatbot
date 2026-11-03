@@ -22,7 +22,30 @@ h1, h2, h3 { color: #203b50 !important; letter-spacing: -0.025em; }
 h1 { font-weight: 800 !important; padding-bottom: .35rem; }
 h2 { font-weight: 750 !important; margin-top: 1.1rem !important; }
 h3 { font-weight: 700 !important; }
-[data-testid="stCaptionContainer"] { color: var(--muted); }
+/* Explicit foreground colours prevent local/cloud theme differences */
+.stApp, .stApp p, .stApp label, .stApp span,
+[data-testid="stWidgetLabel"], [data-testid="stWidgetLabel"] *,
+[data-testid="stMarkdownContainer"], [data-testid="stMarkdownContainer"] p,
+[data-testid="stMarkdownContainer"] li,
+[data-testid="stRadio"] label, [data-testid="stCheckbox"] label,
+[data-testid="stSelectbox"] label, [data-testid="stTextInput"] label,
+[data-testid="stTextArea"] label, [data-testid="stNumberInput"] label,
+[data-testid="stMultiSelect"] label {
+  color: #263746 !important;
+}
+[data-testid="stCaptionContainer"], [data-testid="stCaptionContainer"] * {
+  color: #64748b !important;
+}
+[data-testid="stAlert"], [data-testid="stAlert"] * {
+  color: #705719 !important;
+}
+[data-testid="stTextInput"] input,
+[data-testid="stTextArea"] textarea,
+[data-testid="stNumberInput"] input,
+[data-testid="stSelectbox"] [data-baseweb="select"] *,
+[data-testid="stMultiSelect"] [data-baseweb="select"] * {
+  color: #263746 !important;
+}
 [data-testid="stVerticalBlockBorderWrapper"],
 [data-testid="stExpander"] {
   border: 1px solid var(--line) !important;
