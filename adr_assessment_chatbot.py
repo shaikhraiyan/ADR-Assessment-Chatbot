@@ -181,9 +181,9 @@ with st.form("naranjo"):
     calc = st.form_submit_button("Calculate Naranjo score", type="primary")
 if calc:
     total, label, points = naranjo_score(answers)
-    st.session_state["naranjo"] = (total, label, answers.copy(), points)
-if "naranjo" in st.session_state:
-    total, label, saved, points = st.session_state["naranjo"]
+    st.session_state["naranjo_result"] = (total, label, answers.copy(), points)
+if "naranjo_result" in st.session_state:
+    total, label, saved, points = st.session_state["naranjo_result"]
     st.success(f"Naranjo score: {total} — {label}")
     st.dataframe([{"No.": i, "Question": q, "Answer": saved[k], "Points": points[k]} for i, (k, q) in enumerate(qs, 1)], use_container_width=True, hide_index=True)
 
